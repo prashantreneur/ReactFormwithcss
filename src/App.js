@@ -16,15 +16,18 @@ class App extends Component {
 
   formHandler = (e) => {
     e.preventDefault();
-    this.setState((state) => {
-      const list = state.list.concat(state.name, state.age)
+    // this.setState((state) => {
+    //   const list = state.list.concat(state.name, state.age)
 
-      return {
-        list,
-        name: '',
-        age: ''
-      };
-    });
+    //   return {
+    //     list,
+    //     name: '',
+    //     age: ''
+    //   };
+    // });
+    let arr = this.state.list;
+    arr.push(this.state.name, this.state.age)
+    this.setState({ list: arr })
     console.log(this.state.list);
   };
 
@@ -34,7 +37,7 @@ class App extends Component {
 
       <div className="App">
         <Form click={this.inputHandler} sub={this.formHandler} />
-        {this.state.list.map((person) => <li>{person}</li>)}
+        {this.state.list.map((person, index) => <li key={index}>{person}</li>)}
 
       </div>
     )
