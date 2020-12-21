@@ -7,6 +7,7 @@ class App extends Component {
   state = {
     name: '',
     age: '',
+    list: [],
   }
 
   inputHandler = (e) => {
@@ -14,10 +15,18 @@ class App extends Component {
   }
 
   formHandler = (e) => {
-    // e.preventDefault();
-    alert(`hi! ${this.state.name} Your age is: ${this.state.age}`);
+    e.preventDefault();
+    this.setState((state) => {
+      const list = state.list.concat(state.name, state.age)
 
-  }
+      return {
+        list,
+        name: '',
+        age: ''
+      };
+    });
+    console.log(this.state.list);
+  };
 
   render() {
 
@@ -25,6 +34,8 @@ class App extends Component {
 
       <div className="App">
         <Form click={this.inputHandler} sub={this.formHandler} />
+        {this.state.list.map((person) => <li>{person}</li>)}
+
       </div>
     )
   }
