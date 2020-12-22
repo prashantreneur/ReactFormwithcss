@@ -5,6 +5,7 @@ import Form from './Components/Form'
 
 class App extends Component {
   state = {
+    id: 1,
     name: '',
     age: '',
     list: [],
@@ -16,6 +17,9 @@ class App extends Component {
 
   formHandler = (e) => {
     e.preventDefault();
+
+
+    // 1st Method
     // this.setState((state) => {
     //   const list = state.list.concat(state.name, state.age)
 
@@ -25,9 +29,17 @@ class App extends Component {
     //     age: ''
     //   };
     // });
+
+
+    //2 method
+
     let arr = this.state.list;
-    arr.push(this.state.name, this.state.age)
-    this.setState({ list: arr })
+    const { name, age, id } = this.state
+    arr.push({ name, age, id })
+    this.setState({
+      list: arr,
+      id: this.state.id + 1
+    })
     console.log(this.state.list);
   };
 
@@ -37,7 +49,11 @@ class App extends Component {
 
       <div className="App">
         <Form click={this.inputHandler} sub={this.formHandler} />
-        {this.state.list.map((person, index) => <li key={index}>{person}</li>)}
+        {this.state.list.map((person) =>
+          <li key={person.id}>Name:{person.name} Age:{person.age}</li>
+
+
+        )}
 
       </div>
     )
