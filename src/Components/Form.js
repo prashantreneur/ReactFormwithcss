@@ -4,7 +4,7 @@ import '../Components/form.css';
 export default function Form(props) {
     return (
         <div className='container'>
-            <div className="card">
+            <div className="fmcard">
                 <form onSubmit={props.sub} >
                     <div className="row">
                         <div className="col-25">

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Form from './Components/Form'
+import Card from './Components/Card'
 
 
 class App extends Component {
@@ -47,15 +48,21 @@ class App extends Component {
 
     return (
 
-      <div className="App">
+      <div className='container' >
         <Form click={this.inputHandler} sub={this.formHandler} />
-        {this.state.list.map((person) =>
-          <li key={person.id}>Name:{person.name} Age:{person.age}</li>
 
 
-        )}
+        {this.state.list.map((person) => {
+          return <div className='column'>
+
+            <Card
+              name={person.name}
+              age={person.age}
+            /></div>
+        })}
 
       </div>
+
     )
   }
 }
