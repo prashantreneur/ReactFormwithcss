@@ -1,11 +1,6 @@
  * {
     box-sizing: border-box;
   } 
-  
-  
-
-
-
 
 
   input[type=text], select, textarea {
@@ -26,6 +21,7 @@
     color: white;
     padding: 12px 20px;
     margin-top: 2rem;
+    margin-left: .5rem;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -34,6 +30,21 @@
   
   #btn:hover {
     background-color: #45a049;
+  }
+  #btn-r {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 12px 20px;
+    margin-top: 2rem;
+    margin-left: .5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: center;
+  }
+  
+  #btn-r:hover {
+    background-color: #e60000;
   }
 
 
@@ -59,4 +70,14 @@
 .fmcard:hover{
      transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.footer {
+  position:fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
 }

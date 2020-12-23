@@ -42,14 +42,20 @@ class App extends Component {
       id: this.state.id + 1
     })
     console.log(this.state.list);
+
   };
 
-  render() {
+  resetHandler = () => {
+    this.setState({ name: '', age: '' })
+  }
 
+
+  render() {
+    const { name, age } = this.state;
     return (
 
       <div className='container' >
-        <Form click={this.inputHandler} sub={this.formHandler} />
+        <Form click={this.inputHandler} sub={this.formHandler} name={name} age={age} rest={this.resetHandler} />
 
 
         {this.state.list.map((person) => {
