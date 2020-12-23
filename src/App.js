@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Form from './Components/Form'
 import Card from './Components/Card'
+import Footer from './Components/Footer'
 
 
 class App extends Component {
@@ -66,7 +67,7 @@ class App extends Component {
               age={person.age}
             /></div>
         })}
-
+        <Footer />
       </div>
 
     )

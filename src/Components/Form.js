@@ -26,7 +26,7 @@ export default function Form(props) {
                     <button type="reset" id='btn-r'>Reset</button>
                 </form>
             </div>
-            <footer className='footer'>Prashat Tripathi</footer>
+
         </div>
     )
 }
