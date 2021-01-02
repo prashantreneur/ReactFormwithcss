@@ -38,10 +38,19 @@ class App extends Component {
     let arr = this.state.list;
     const { name, age, id } = this.state
     arr.push({ name, age, id })
-    this.setState({
-      list: arr,
-      id: this.state.id + 1
+    // this.setState({
+    //   list: arr,
+    //   id: this.state.id + 1
+    // })
+
+    //Better way to update pervios state
+    this.setState((prevState, props) => {
+      return {
+        list: arr,
+        id: prevState.id + 1
+      };
     })
+
     console.log(this.state.list);
 
   };
